@@ -111,7 +111,9 @@ To import a module, you must use the `use` keyword in the top level scope of the
 use.std::math::u64
 
 begin
-  ...
+    push.1.0
+    push.2.0
+    exec.u64::wrapping_add
 end
 ```
 
@@ -124,12 +126,12 @@ use.std::math::u64->bigint
 This would alias the imported module as `bigint` rather than `u64`. The alias is needed to reference items from the imported module, as shown below:
 
 ```
-use.std::math::u64
+use.std::math::u64->bigint
 
 begin
     push.1.0
     push.2.0
-    exec.u64::wrapping_add
+    exec.bigint::wrapping_add
 end
 ```
 
